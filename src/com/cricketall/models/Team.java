@@ -5,18 +5,25 @@ import java.util.List;
 public class Team {
 
     private String name;
-    private List<Player> palyer; //get player clz members as a team
+    private List<Player> players; //get player clz members as a team
     private int totalScore;
     private int totalWickets;
     private int currentBatsman;
     private boolean hasWonToss;
 
-    public Team(String name) {
+    public Team(String name, int noOfPlayers) {
         this.name = name;
         this.totalScore = 0;
         this.totalWickets = 0;
         this.currentBatsman = -1;
         this.hasWonToss = false;
+    }
+
+    private void setPalyer(int noOfPlayers){
+        for (int i = 0; i < noOfPlayers; i++){
+            Player player = new Player(String.valueOf(i));
+            players.add(player);
+        }
     }
 
     public int getTotalScore() {
